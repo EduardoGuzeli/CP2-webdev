@@ -94,3 +94,36 @@ function atualizarTotal() {
   const total = calcularTotal();
   totalEl.textContent = formatarMoeda(total);
 }
+
+// Aplica desconto de 10% usando Reduce
+let descontoAplicado = false;
+ 
+function aplicarDesconto() {
+  if (descontoAplicado) return;
+ 
+  const totalEl = document.getElementById("total-compra");
+  const btnDesconto = document.getElementById("btn-desconto");
+  if (!totalEl) return;
+ 
+  const totalComDesconto = carrinho.reduce((acc, item) => {
+    return acc + item.preco * item.quantidade * 0.9;
+  }, 0);
+ 
+  totalEl.textContent = formatarMoeda(totalComDesconto);
+  totalEl.classList.add("com-desconto");
+  descontoAplicado = true;
+ 
+  if (btnDesconto) {
+    btnDesconto.textContent = "✓ Desconto Aplicado!";
+    btnDesconto.disabled = true;
+  }
+ 
+  let badge = document.getElementById("badge-desconto");
+  if (!badge) {
+    badge = document.createElement("span");
+    badge.id = "badge-desconto";
+    badge.classList.add("badge-desconto");
+    badge.textContent = "-10%";
+    totalEl.parentNode.appendChild(badge);
+  }
+}

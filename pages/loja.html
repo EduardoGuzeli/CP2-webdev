@@ -1,11 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja — AnimeVault</title>
+  <link rel="stylesheet" href="../src/css/estilo.css">
 </head>
 <body>
-    
+
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">Anime<span>Vault</span></div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="loja.html" class="ativo">Loja</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CARRINHO -->
+  <main>
+    <div class="loja-container">
+      <h1 class="carrinho-titulo">Meu <span>Carrinho</span></h1>
+      <p class="carrinho-subtitulo">Revise seus itens e finalize a compra</p>
+
+      <!-- Lista de itens — preenchida via DOM -->
+      <ul class="lista-carrinho" id="lista-carrinho"></ul>
+
+      <!-- Resumo financeiro -->
+      <div class="resumo-financeiro">
+        <div class="resumo-linha">
+          <span>Subtotal dos itens</span>
+          <span id="subtotal-label">—</span>
+        </div>
+
+        <div class="resumo-total-label">
+          <span>TOTAL DA COMPRA</span>
+          <span id="total-compra">R$ 0,00</span>
+        </div>
+
+        <div class="acoes-carrinho">
+          <button id="btn-desconto" onclick="aplicarDesconto()">
+            Aplicar 10% de Desconto
+          </button>
+          <button id="btn-finalizar">Finalizar Pedido →</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>&copy; 2026 <strong>AnimeVault</strong> — Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="../src/js/script.js"></script>
+  <script>
+    // Preenche subtotal estático após DOM carregar
+    document.addEventListener('DOMContentLoaded', () => {
+      const subtotalEl = document.getElementById('subtotal-label');
+      if (subtotalEl) {
+        const total = calcularTotal();
+        subtotalEl.textContent = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      }
+    });
+  </script>
 </body>
 </html>

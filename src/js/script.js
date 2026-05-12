@@ -39,3 +39,40 @@ const produtos = [
     emoji: "⚡"
  },
 ];
+
+// Renderiza os cards de produtos no index.html via DOM
+function renderizarProdutos() {
+  const container = document.getElementById("produtos-container");
+  if (!container) return;
+ 
+  container.innerHTML = "";
+ 
+  produtos.forEach((produto) => {
+    const card = document.createElement("article");
+    card.classList.add("card-produto");
+    card.innerHTML = `
+<div class="card-emoji">${produto.emoji}</div>
+<div class="card-body">
+<h3 class="card-nome">${produto.nome}</h3>
+<p class="card-descricao">${produto.descricao}</p>
+<div class="card-footer">
+<span class="card-preco">R$ ${produto.preco.toFixed(2).replace(".", ",")}</span>
+<button class="btn-adicionar" onclick="adicionarAoCarrinho(${produto.id})">
+            + Carrinho
+</button>
+</div>
+</div>
+    `;
+    container.appendChild(card);
+  });
+}
+ 
+function adicionarAoCarrinho(id) {
+  const btn = event.target;
+  btn.textContent = "✓ Adicionado!";
+  btn.classList.add("adicionado");
+  setTimeout(() => {
+    btn.textContent = "+ Carrinho";
+    btn.classList.remove("adicionado");
+  }, 1500);
+}

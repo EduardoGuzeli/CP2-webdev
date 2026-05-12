@@ -76,3 +76,21 @@ function adicionarAoCarrinho(id) {
     btn.classList.remove("adicionado");
   }, 1500);
 }
+
+// Calcula o total do carrinho usando Reduce
+function calcularTotal() {
+  return carrinho.reduce((acumulador, item) => {
+    return acumulador + item.preco * item.quantidade;
+  }, 0);
+}
+ 
+function formatarMoeda(valor) {
+  return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
+ 
+function atualizarTotal() {
+  const totalEl = document.getElementById("total-compra");
+  if (!totalEl) return;
+  const total = calcularTotal();
+  totalEl.textContent = formatarMoeda(total);
+}

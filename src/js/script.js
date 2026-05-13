@@ -5,41 +5,41 @@ const produtos = [
   {
     id: 1,
     nome: "Naruto Uzumaki",
-    descricao: "Action Figure articulado do Naruto clássico com uniforme laranja icônico e detalhes realistas.",
+   descricao: "Figure premium do Naruto Uzumaki com  Kurama em chamas ao fundo, pose confiante e detalhes   realistas inspirados no anime clássico.",
     preco: 189.90,
-    imagem: "/assets/img/naruto.jpg",
+    imagem: "/src/assets/img/naruto.jpg",
     emoji: "🍥"
   },
   {
     id: 2,
     nome: "Sasuke Uchiha",
-    descricao: "Figura do Sasuke em pose de batalha utilizando o Sharingan com efeito especial giratório.",
+    descricao: "Figure colecionável do Sasuke Uchiha com efeito de Chidori elétrico, espada em mãos e visual inspirado em Naruto Shippuden.",
     preco: 219.90,
-    imagem: "/assets/img/sasuke.jpg",
+    imagem: "/src/assets/img/sasuke.jpg",
     emoji: "⚡"
   },
   {
     id: 3,
     nome: "Eren Yeager",
-    descricao: "Action Figure premium do Eren Yeager com equipamento tridimensional e espadas da Tropa de Exploração.",
+    descricao: "Action figure do Eren Yeager equipada com o dispositivo de manobra tridimensional, capa da Tropa de Exploração e cenário de batalha épico.",
     preco: 279.90,
-    imagem: "/assets/img/eren.jpg",
+    imagem: "/src/assets/img/eren.jpg",
     emoji: "🛡️"
   },
   {
     id: 4,
     nome: "Itachi Uchiha",
-    descricao: "Figura colecionável do Itachi com manto Akatsuki, corvos detalhados e base temática exclusiva.",
+    descricao: "Figure detalhada do Itachi Uchiha com manto da Akatsuki, corvos sombrios e efeitos visuais inspirados no Mangekyou Sharingan.",
     preco: 249.90,
-    imagem: "/assets/img/itachi.jpg",
+    imagem: "/src/assets/img/itachi.jpg",
     emoji: "🔴"
   },
   {
     id: 5,
     nome: "Goku Super Saiyajin",
-    descricao: "Goku em modo Super Saiyajin com efeitos de ki e base de display exclusiva.",
+    descricao: "Action figure do Goku Super Saiyajin com aura de energia intensa, uniforme clássico e pose inspirada nas batalhas de Dragon Ball Z.",
     preco: 159.90,
-    imagem: "/assets/img/goku.jpg",
+    imagem: "/src/assets/img/goku.jpg",
     emoji: "⚡"
   }
 ];

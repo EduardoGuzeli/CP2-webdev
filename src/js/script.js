@@ -7,7 +7,7 @@ const produtos = [
     nome: "Naruto Uzumaki",
    descricao: "Figure premium do Naruto Uzumaki com  Kurama em chamas ao fundo, pose confiante e detalhes   realistas inspirados no anime clássico.",
     preco: 189.90,
-    imagem: "/src/assets/img/naruto.jpg",
+    imagem: "src/assets/img/naruto.jpg",
     emoji: "🍥"
   },
   {
@@ -15,7 +15,7 @@ const produtos = [
     nome: "Sasuke Uchiha",
     descricao: "Figure colecionável do Sasuke Uchiha com efeito de Chidori elétrico, espada em mãos e visual inspirado em Naruto Shippuden.",
     preco: 219.90,
-    imagem: "/src/assets/img/sasuke.jpg",
+    imagem: "src/assets/img/sasuke.jpg",
     emoji: "⚡"
   },
   {
@@ -23,7 +23,7 @@ const produtos = [
     nome: "Eren Yeager",
     descricao: "Action figure do Eren Yeager equipada com o dispositivo de manobra tridimensional, capa da Tropa de Exploração e cenário de batalha épico.",
     preco: 279.90,
-    imagem: "/src/assets/img/eren.jpg",
+    imagem: "src/assets/img/eren.jpg",
     emoji: "🛡️"
   },
   {
@@ -31,7 +31,7 @@ const produtos = [
     nome: "Itachi Uchiha",
     descricao: "Figure detalhada do Itachi Uchiha com manto da Akatsuki, corvos sombrios e efeitos visuais inspirados no Mangekyou Sharingan.",
     preco: 249.90,
-    imagem: "/src/assets/img/itachi.jpg",
+    imagem: "src/assets/img/itachi.jpg",
     emoji: "🔴"
   },
   {
@@ -39,7 +39,7 @@ const produtos = [
     nome: "Goku Super Saiyajin",
     descricao: "Action figure do Goku Super Saiyajin com aura de energia intensa, uniforme clássico e pose inspirada nas batalhas de Dragon Ball Z.",
     preco: 159.90,
-    imagem: "/src/assets/img/goku.jpg",
+    imagem: "src/assets/img/goku.jpg",
     emoji: "⚡"
   }
 ];
@@ -235,6 +235,23 @@ function aplicarDesconto() {
 
     totalEl.parentNode.appendChild(badge);
   }
+}
+
+// ============================================================
+// REMOVER ITEM DO CARRINHO
+// ============================================================
+function removerItem(index) {
+ 
+  carrinho.splice(index, 1);
+ 
+  // Remove badge de desconto se existir, pois o total mudou
+  const badge = document.getElementById("badge-desconto");
+  if (badge) badge.remove();
+ 
+  const totalEl = document.getElementById("total-compra");
+  if (totalEl) totalEl.classList.remove("com-desconto");
+ 
+  renderizarCarrinho();
 }
 
 // ============================================================

@@ -195,6 +195,11 @@ function atualizarTotal() {
  
   totalEl.textContent = formatarMoeda(total);
  
+  const subtotalEl = document.getElementById("subtotal-label");
+  if (subtotalEl) {
+   subtotalEl.textContent = formatarMoeda(total);
+  }
+  
   descontoAplicado = false;
  
   const btnDesconto = document.getElementById("btn-desconto");
